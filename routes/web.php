@@ -17,11 +17,7 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-Route::get("/home",[JobsController::class, 'index']);
+Route::get("/",[JobsController::class, 'index']);
 Route::get("/login", [UserRouteController::class, 'login']);
 Route::post("/register", [UserController::class, 'register']);
 Route::post('/loginFunc', [UserController::class, 'login']);
@@ -29,8 +25,3 @@ Route::get('/signup', [UserRouteController::class, 'signup']);
 Route::resource("jobs", JobsController::class);
 Route::get("listing/me", [JobsController::class, 'showUserJobs']);
 Route::post("logout", [JobsController::class, 'logout']);
-// Auth::routes();  
-Route::get('/art', [ArtController::class, 'view']);
-Route::get('/art/create', [ArtController::class, 'show']);
-Route::post('/art/create', [ArtController::class, 'create']);
-// Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
